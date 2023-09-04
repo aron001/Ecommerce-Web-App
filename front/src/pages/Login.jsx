@@ -3,7 +3,7 @@ import Login from "../components/Login/Login.jsx";
 
 function LoginPage() {
   return (
-    <div className="w-full h-screen">
+    <div>
       <Login />
     </div>
   );
