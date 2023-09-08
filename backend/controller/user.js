@@ -1,8 +1,8 @@
 const express = require("express");
-const path= require("path")
+const path = require("path");
 const User = require("../model/user");
 const router = express.Router();
-const {upload}= require("../multer");
+const { upload } = require("../multer");
 const ErrorHandler = require("../utils/ErrorHandler");
 const fs = require("fs");
 const jwt = require("jsonwebtoken");
@@ -11,40 +11,36 @@ const sendMail = require("../utils/sendMail");
 const sendToken = require("../utils/jwtToken");
 
 // create user
-router.post("/create-user",upload.single("file"), async (req, res, next) => {
-      try{
-      const { name, email, password, avatar } = req.body;
-      const userEmail = await User.findOne({ email });
-  
-      if (userEmail) {
-    
-        
-        const filename =req.file.filename;
-        const filepath= `uploads/${filename}`;
-        fs.unlink(filepath,(err)=>{
-          if(err){
-            console.log(err)
-            res.status(500).json({message: "error deleting file"})
-          } 
-          
+router.post("/create-user", upload.single("file"), async (req, res, next) => {
+  try {
+    const { name, email, password, avatar } = req.body;
+    const userEmail = await User.findOne({ email });
+
+    if (userEmail) {
+      const filename = req.file.filename;
+      const filepath = `uploads/${filename}`;
+      fs.unlink(filepath, (err) => {
+        if (err) {
+          console.log(err);
+          res.status(500).json({ message: "error deleting file" });
         }
-        )
-        return next(new ErrorHandler("User already exists", 400));
-      }
-      const filename=req.file.filename;
-      const fileUrl=path.join(filename);
-  
-      const user = {
-        name: name,
-        email: email,
-        password: password,
-        avatar:fileUrl,
-      };
-      const activationToken = createActivationToken(user);
+      });
+      return next(new ErrorHandler("User already exists", 400));
+    }
+    const filename = req.file.filename;
+    const fileUrl = path.join(filename);
+
+    const user = {
+      name: name,
+      email: email,
+      password: password,
+      avatar: fileUrl,
+    };
+    const activationToken = createActivationToken(user);
 
     const activationUrl = `http://localhost:3000/activation/${activationToken}`;
 
-     try{
+    try {
       await sendMail({
         email: user.email,
         subject: "Activate your account",
@@ -54,15 +50,15 @@ router.post("/create-user",upload.single("file"), async (req, res, next) => {
         success: true,
         message: `please check your email:- ${user.email} to activate your account!`,
       });
-     } catch(error){
-return next(new ErrorHandler(error.message),500);
-     }
-    } catch(error){
-        return next(new ErrorHandler(error.message),400);
-      }
-    } )
+    } catch (error) {
+      return next(new ErrorHandler(error.message), 500);
+    }
+  } catch (error) {
+    return next(new ErrorHandler(error.message), 400);
+  }
+});
 
-    // create activation token
+// create activation token
 const createActivationToken = (user) => {
   return jwt.sign(user, process.env.ACTIVATION_SECRET, {
     expiresIn: "5m",
@@ -105,4 +101,4 @@ router.post(
   })
 );
 
-    module.exports =router;
+module.exports = router;
