@@ -21,13 +21,13 @@ function Login() {
         {
           email,
           password,
-        }
-        
+        },
+        { withCredentials: true }
       )
       .then((res) => {
         toast.success("Login Success!");
         navigate("/");
-        window.location.reload(true); 
+        //window.location.reload(true);
       })
       .catch((err) => {
         toast.error(err.response.data.message);
@@ -117,8 +117,8 @@ function Login() {
                   Forgot your password?
                 </a>
               </div>
-               </div>
-               <div>
+            </div>
+            <div>
               <button
                 type="submit"
                 className="group relative w-full h-[40px] flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700"
@@ -128,7 +128,7 @@ function Login() {
             </div>
             <div className={`${styles.noramlFlex} w-full`}>
               <h4>Not have any account?</h4>
-              <Link to="/signup" className="text-blue-600 pl-2">
+              <Link to="/sign-up" className="text-blue-600 pl-2">
                 Sign Up
               </Link>
             </div>
