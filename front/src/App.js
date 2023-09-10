@@ -3,22 +3,17 @@ import { BrowserRouter, Routes, Route, Router } from "react-router-dom";
 import "./App.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import axios from "axios";
+
 import { ActivationPage, LoginPage, SignupPage } from "./routes/Routes.js";
 import { useEffect } from "react";
-import { server } from "./server";
+import Store from "./redux/store";
+import { loadUser } from "./redux/actions/user";
+
 const App = () => {
+ 
   useEffect(() => {
-    axios
-      .get(`${server}/user/getuser`, {
-        withCredentials: true,
-      })
-      .then((res) => {
-        toast.success(res.data.message);
-      })
-      .catch((err) => {
-        toast.error(err.response.data.message);
-      });
+    Store.dispatch(loadUser());
+    
   }, []);
   return (
     <BrowserRouter>
