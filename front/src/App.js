@@ -4,7 +4,7 @@ import "./App.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-import { ActivationPage, LoginPage, SignupPage } from "./routes/Routes.js";
+import { ActivationPage, LoginPage, SignupPage,HomePage } from "./routes/Routes.js";
 import { useEffect } from "react";
 import Store from "./redux/store";
 import { loadUser } from "./redux/actions/user";
@@ -18,6 +18,7 @@ const App = () => {
   return (
     <BrowserRouter>
       <Routes>
+      <Route path="/" element={<HomePage />} />
         <Route path="/sign-up" element={<SignupPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route
