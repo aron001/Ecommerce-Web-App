@@ -14,9 +14,9 @@ function Header() {
 
     const filteredProducts =
       productData &&
-      productData.filter((product) =>{
+      productData.filter((product) =>
         product.name.toLowerCase().includes(term.toLowerCase())
-  });
+  );
     setSearchData(filteredProducts);
   };
 
@@ -41,6 +41,27 @@ function Header() {
           size={30}
           className="absolute right-2 top-1.5 cursor-pointer"
         />
+        {searchData && searchData.length !== 0 ? (
+              <div className="absolute min-h-[30vh] bg-slate-50 shadow-sm-2 z-[9] p-4">
+                {searchData &&
+                  searchData.map((i, index) => {
+                    const d=i.name;
+                    const Product_name=d.replace(/\s+/g, "-")
+                    return (
+                      <Link to={`/product/${Product_name}`}>
+                        <div className="w-full flex items-start-py-3">
+                          <img
+                            src={i.image_Url[0]?.url}
+                            alt=""
+                            className="w-[40px] h-[40px] mr-[10px]"
+                          />
+                          <h1>{i.name}</h1>
+                        </div>
+                      </Link>
+                    );
+                  })}
+              </div>
+            ) : null}
       </div>
     </div></div>
   );
