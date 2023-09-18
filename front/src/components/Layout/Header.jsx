@@ -73,6 +73,10 @@ function Header() {
                 <IoIosArrowForward className="ml-1" />
               </h1>
             </Link>
+            //next day the 2nd headr to be continued
+            <div>
+              2nd header
+            </div>
           </div>
       </div>
       
