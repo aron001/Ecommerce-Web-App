@@ -2,12 +2,13 @@ import React, { useState } from "react";
 import styles from "../../styles/styles";
 import hululogooo from "../../Assets/hululogooo.png";
 import { Link } from "react-router-dom";
-import { AiOutlineSearch } from "react-icons/ai";
+import { AiOutlineSearch,  AiOutlineHeart,AiOutlineShoppingCart } from "react-icons/ai";
 import { productData } from "../../static/data";
 import { IoIosArrowDown, IoIosArrowForward } from "react-icons/io";
 import { BiMenuAltLeft } from "react-icons/bi";
 import DropDown from "./DropDown";
 import Navbar from "./Navbar.jsx";
+import { CgProfile } from "react-icons/cg";
 import { categoriesData } from "../../static/data";
 function Header({activeHeading}) {
   const [searchTerm, setSearchTerm] = useState("");
@@ -127,6 +128,41 @@ function Header({activeHeading}) {
       <div className={`${styles.noramlFlex}`}>
             <Navbar active={activeHeading} />
           </div>
+          <div className="flex">
+            <div className={`${styles.noramlFlex}`}>
+              <div
+                className="relative cursor-pointer mr-[15px]"
+              >
+                <AiOutlineHeart size={30} color="rgb(255 255 255 / 83%)" />
+                <span className="absolute right-0 top-0 rounded-full bg-[#ec0202] w-4 h-4 top right p-0 m-0 text-white font-mono text-[12px] leading-tight text-center">
+               0
+                </span>
+              </div>
+            </div>
+            <div className={`${styles.noramlFlex}`}>
+              <div
+                className="relative cursor-pointer mr-[15px]"
+                onClick={() => setOpenCart(true)}
+              >
+                <AiOutlineShoppingCart
+                  size={30}
+                  color="rgb(255 255 255 / 83%)"
+                />
+                <span className="absolute right-0 top-0 rounded-full bg-[#ee0a1d] w-4 h-4 top right p-0 m-0 text-white font-mono text-[12px] leading-tight text-center">
+                0
+                </span>
+              </div>
+            </div>
+            <div className={`${styles.noramlFlex}`}>
+              <div className="relative cursor-pointer mr-[15px]">
+               
+                  <Link to="/login">
+                    <CgProfile size={30} color="rgb(255 255 255 / 83%)" />
+                  </Link>
+               
+              </div>
+            </div> 
+            </div>
     </div>
     </div>
     </>
