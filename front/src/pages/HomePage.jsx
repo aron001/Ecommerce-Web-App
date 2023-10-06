@@ -3,6 +3,7 @@ import Header from "../components/Layout/Header";
 import Hero from "../components/Route/Hero/Hero";
 import Categories from "../components/Route/Categories/Categories.jsx";
 import BestDeals from "../components/Route/BestDeals/BestDeals";
+import FeaturedProduct from "../components/Route/FeaturedProduct/FeaturedProduct.jsx";
 const HomePage = () => {
   return (
     <div>
@@ -10,6 +11,7 @@ const HomePage = () => {
         <Hero />
         <Categories />
         <BestDeals />
+        <FeaturedProduct />
 
     </div>
   )
