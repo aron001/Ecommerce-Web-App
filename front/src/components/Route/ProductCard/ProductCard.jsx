@@ -9,7 +9,7 @@ import {
 } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import styles from "../../../styles/styles";
-
+import ProductDetailsCard from "../ProductDetailsCard/ProductDetailsCard";
 import { useEffect } from "react";
 
 const ProductCard = ({ data,isEvent }) => {
@@ -114,6 +114,7 @@ const ProductCard = ({ data,isEvent }) => {
             color="#444"
             title="Add to cart"
           />
+          {open ? <ProductDetailsCard setOpen={setOpen} data={data}/>: null}
         </div>
       </div>
     </>
