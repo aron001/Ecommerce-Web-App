@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "../../styles/styles";
-
+import CountDown from "./CountDown";
 
 const EventCard = () => {
   
@@ -38,6 +38,7 @@ const EventCard = () => {
              sold
           </span>
         </div>
+        <CountDown />
         <br />
         <div className="flex items-center">
             <div className={`${styles.button} text-[#fff]`}>See Details</div>
