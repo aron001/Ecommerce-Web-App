@@ -6,7 +6,7 @@ const EventCard = () => {
   
   return (
     <div
-      className={`w-full block bg-white rounded-lg:flex p-2  flex
+      className={`w-full block bg-white rounded-lg:flex p-2  flex mb-12
       `} 
     >
       <div className="w-full lg:-w[50%] m-auto">
