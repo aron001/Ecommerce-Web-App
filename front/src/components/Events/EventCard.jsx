@@ -2,11 +2,11 @@ import React from "react";
 import styles from "../../styles/styles";
 import CountDown from "./CountDown";
 
-const EventCard = () => {
+const EventCard = ({active}) => {
   
   return (
     <div
-      className={`w-full block bg-white rounded-lg:flex p-2  flex mb-12
+      className={`w-full block bg-white rounded-lg ${active? "unset" : "mb-12"} lg:flex p-2
       `} 
     >
       <div className="w-full lg:-w[50%] m-auto">
