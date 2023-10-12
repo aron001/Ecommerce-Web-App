@@ -14,15 +14,13 @@ const EventCard = () => {
       </div>
       <div className="w-full lg:[w-50%] flex flex-col justify-center">
         <h2 className={`${styles.productTitle}`}>Iphone 14pro max 8/256</h2>
-        <p>awesrdftgyhkjqwertyuiopqwertyuiasdfghjkqwertyui
-            asdfghjkqwertyuioawesrdftgyhkjqwertyuiopqwertyuiasdfghjkqwertyui
-            asdfghjkqwertyuioawesrdftgyhkjqwertyuiopqwertyuiasdfghjkqwertyui
-            asdfghjkqwertyuioawesrdftgyhkjqwertyuiopqwertyuiasdfghjkqwertyui
-            asdfghjkqwertyuio awesrdftgyhkjqwertyuiopqwertyuiasdfghjkqwertyui
-            asdfghjkqwertyuioawesrdftgyhkjqwertyuiopqwertyuiasdfghjkqwertyui
-            asdfghjkqwertyuioawesrdftgyhkjqwertyuiopqwertyuiasdfghjkqwertyui
-            asdfghjkqwertyuioawesrdftgyhkjqwertyuiopqwertyuiasdfghjkqwertyui
-            awesrdftgyhkjqwertyuiopqwertyuiasdfghjkqwertyui
+        <p>
+
+Lorem ipsum dolor sit amet. Vel quas numquam eos reiciendis quas sit quia nobis. Quo explicabo tempore et eaque itaque a impedit ratione ut velit ducimus quo voluptate dolorum aut enim praesentium.
+
+Ab soluta sint sed optio dolore in fugit tempore aut temporibus porro rem maiores voluptatibus qui voluptas ipsam. Est quisquam unde aut illum saepe quo quis consequatur rem voluptate molestias hic dolorem asperiores rem obcaecati nemo est sunt perferendis. Eum labore cumque ut omnis omnis sit voluptas earum?
+
+Eos quos beatae sit possimus necessitatibus sit molestiae Quis qui obcaecati dolorem ut laboriosam recusandae sit atque nemo et voluptatem cupiditate. Est amet laborum ut facilis dolor et facere reiciendis. Id alias reiciendis id dolorum laboriosam non labore laborum aut deserunt pariatur cum quasi perferendis et sequi blanditiis ea recusandae esse.
 
         </p>
         <div className="flex py-2 justify-between">
